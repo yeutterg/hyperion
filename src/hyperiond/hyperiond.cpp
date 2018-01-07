@@ -64,7 +64,10 @@
 #include <boblightserver/BoblightServer.h>
 #include <webconfig/WebConfig.h>
 
+#ifndef ENABLE_OSX
 #include <sys/prctl.h> 
+#endif
+
 #include <utils/Logger.h>
 
 using namespace vlofgren;
@@ -74,7 +77,7 @@ using namespace vlofgren;
 
 // BoblightServer includes
 #include <boblightserver/BoblightServer.h>
-#include <sys/prctl.h> 
+// #include <sys/prctl.h> 
 
 using namespace vlofgren;
 
@@ -474,7 +477,10 @@ int main(int argc, char** argv)
 	if (argParentPid.getValue() > 0 )
 	{
 		std::cout << "hyperiond client, parent is pid " << argParentPid.getValue() << std::endl;
+
+		#ifndef ENABLE_OSX
 		prctl(PR_SET_PDEATHSIG, SIGHUP);
+		#endif
 	}
 	
 	int argvId = -1;
@@ -570,7 +576,9 @@ int main(int argc, char** argv)
 #ifdef ENABLE_OSX
 	// Construct and start the osx grabber if the configuration is present
 	OsxWrapper * osxGrabber = nullptr;
-	startGrabberDispmanx(config, hyperion, protoServer, xbmcVideoChecker, osxGrabber);
+	// startGrabberDispmanx(config, hyperion, protoServer, xbmcVideoChecker, osxGrabber);
+
+	startGrabberOsx(config, hyperion, protoServer, xbmcVideoChecker, osxGrabber);
 #else
 	if (config.isMember("osxgrabber"))
 	{

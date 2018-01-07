@@ -3,7 +3,7 @@
 #include <QUdpSocket>
 
 // Linux-SPI includes
-#include <linux/spi/spidev.h>
+// #include <linux/spi/spidev.h>
 
 // Hyperion includes
 #include <leddevice/LedDevice.h>
