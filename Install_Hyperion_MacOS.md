@@ -2,11 +2,13 @@
 
 Updated 2018-01-06
 
-This guide details the installation of [Hyperion](https://hyperion-project.org/), an application to mimic the functionality of [Ambilight]() or [DreamScreen](), on MacOS. 
+This guide details the installation of [Hyperion](https://hyperion-project.org/), an application to mimic the functionality of [Ambilight](https://en.wikipedia.org/wiki/Ambilight), on MacOS. 
 
 Hyperion does not come pre-packaged for MacOS, so you have to compile it yourself.
 
-A [similar guide](https://github.com/hyperion-project/hyperion/blob/master/CompileHowto.txt) is provided on the Hyperion Project GitHub, but is not specific to Mac systems and could lead to confusion. In addition, I had a number of build issues with the stable version of MacOS High Sierra. So, this guide is written for the next generation (alpha) version of the software, [Hyperion.ng](https://github.com/hyperion-project/hyperion.ng).
+A [similar guide](https://github.com/hyperion-project/hyperion/blob/master/CompileHowto.txt) is provided on the Hyperion Project GitHub, but is not specific to Mac systems and could lead to confusion. In addition, I had a number of build issues with those instructions on MacOS High Sierra. So, this guide is written for a [forked version](https://github.com/yeutterg/hyperion-macos) tested to work on my system.
+
+**Disclaimer:**
 
 This guide was tested on a system running MacOS High Sierra. I cannot guarantee this will work smoothly on your system. This is alpha software, so expect issues even after install.
 
@@ -56,19 +58,19 @@ If you get any errors, you'll want to dig into those before proceeding.
 
 ## 4. Download Hyperion
 
-Consider where you would like to locate the "Hyperion" directory. A logical place might be in Macintosh HD > Applications (the Applications folder). I will use the Applications folder in this example.
+Consider where you would like to locate the "Hyperion" directory. For example, you could build this in a Documents subfolder (~/Documents/Hyperion).
 
-Open Terminal, cd to the Applications directory, and add the Hyperion folder as an environment variable:
+Open Terminal, cd to the Documents directory, and add the Hyperion folder as an environment variable:
 
 ```
-cd /Applications
+cd ~/Documents
 export HYPERION_DIR="Hyperion"
 ```
 
 Now clone the files from GitHub:
 
 ```
-git clone --recursive https://github.com/yeutterg/hyperion.git "$HYPERION_DIR"
+git clone --recursive https://github.com/yeutterg/hyperion-macos.git "$HYPERION_DIR"
 ```
 
 ## 5. Build and Install Hyperion
