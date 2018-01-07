@@ -10,7 +10,7 @@ A [similar guide](https://github.com/hyperion-project/hyperion/blob/master/Compi
 
 **Disclaimer:**
 
-This guide was tested on a system running MacOS High Sierra. I cannot guarantee this will work smoothly on your system. This is alpha software, so expect issues even after install.
+This guide was tested on a system running MacOS High Sierra. I cannot guarantee this will work smoothly on your system. 
 
 ## 1. Install Xcode and Command Line Tools
 
@@ -101,5 +101,22 @@ Then clean up:
 strip bin/*
 ```
 
-## 6. Run Hyperion
+## 6. Configure Hyperion with HyperCon
 
+Download the [HyperCon](https://sourceforge.net/projects/hyperion-project/files/hypercon/HyperCon.jar/download) utility and move the HyperCon.jar file to a permanent folder, for example ~/Documents. Then open it.
+
+If you get a security warning when trying to open HyperCon.jar, go to System Preferences > Security & Privacy and click "Open Anyway" near the bottom right of the window.
+
+Refer to the [wiki configuration page](https://hyperion-project.org/wiki/3-Configuration) for HyperCon instructions specific to your setup.
+
+Once you are done with the HyperCon, you'll export a file with a default name of 'hyperion.config.json'.
+
+## 7. Run Hyperion
+
+Open Terminal and cd to the folder containing 'hyperion.config.json'. Run the following command:
+
+```
+hyperiond config.file hyperion.config.json
+```
+
+You may have to refine your configuration based on the messages in Terminal.
