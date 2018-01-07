@@ -109,7 +109,7 @@ If you get a security warning when trying to open HyperCon.jar, go to System Pre
 
 Refer to the [wiki configuration page](https://hyperion-project.org/wiki/3-Configuration) for HyperCon instructions specific to your setup.
 
-Once you are done with the HyperCon, you'll export a file with a default name of 'hyperion.config.json'.
+Once you are done with the HyperCon, you'll press "Create Hyperion Configuration" to export a file with a default name of 'hyperion.config.json'.
 
 ## 7. Run Hyperion
 
